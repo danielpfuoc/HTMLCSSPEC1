@@ -178,7 +178,7 @@ header {
       pre {
         margin: 0;
         code {
-          border-radius: 0.5rem;
+          @include border;
         }
       }
 
@@ -194,7 +194,7 @@ header {
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: 0.5rem;
+          @include border;
         }
       }
     }
