@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/../node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/monokai-sublime.min.css">
+  </head>
+  <body class="page-content">
+    <header>
+      <div class="contained">
+        <p>
+          <a href="/index.html">Pequeña enciclopedia front-end</a>:
+          <a href="index.html">Lenguajes del Front-end</a>
+        </p>
+        <h1>HTML</h1>
+      </div>
+    </header>
+    <article class="info contained">
+      <aside class="introduction">
+        <img src="/img/html5-plain.svg" alt="" />
+        <div class="data">
+          <dl>
+            <dt>Última versión</dt>
+            <dd>5.2</dd>
+            <dt>Página web</dt>
+            <dd>
+              <a href="https://www.w3.org/TR/html52/" target="_blank"
+                >W3C Recommendation <i class="fas fa-external-link-alt"></i
+              ></a>
+            </dd>
+          </dl>
+          <dl id="hidden" class="hide">
+            <dt>Año de creación</dt>
+            <dd>1991</dd>
+            <dt>Inventor</dt>
+            <dd>Tim Berners-Lee</dd>
+          </dl>
+          <button id="expand">Más información</button>
+        </div>
+      </aside>
+      <div>
+        <main class="content">
+          <dfn>
+            HTML es un lenguaje de marcado que se utiliza para el desarrollo de
+            páginas de Internet. Se trata de la siglas que corresponden a
+            HyperText Markup Language, es decir, Lenguaje de Marcas de
+            Hipertexto.
+          </dfn>
+          <h2>¿Qué es el HTML?</h2>
+          <p>
+            Es un lenguaje informático diseñado para permitir la creación de sitios web. Estos sitios web pueden ser vistos por cualquier otra persona conectada a Internet. Es relativamente fácil de aprender, y los conceptos básicos son accesibles para la mayoría de las personas de una sola vez; y bastante poderoso en lo que te permite crear. Constantemente se está revisando y evolucionando para satisfacer las demandas y requisitos de la creciente audiencia de Internet bajo la dirección del W3C, la organización encargada de diseñar y mantener el lenguaje.
+          </p>
+          <h2>¿Como funciona?</h2>
+          <p>
+            HTML consiste en una serie de códigos cortos escritos en un archivo de texto por el autor del sitio: estas son las etiquetas. El texto se guarda como un archivo html y se ve a través de un navegador, como Internet Explorer o Netscape Navigator. Este navegador lee el archivo y traduce el texto a una forma visible, con suerte presentando la página como el autor había querido. Escribir su propio HTML implica usar etiquetas correctamente para crear su visión. Puede usar cualquier cosa, desde un editor de texto rudimentario hasta un potente editor gráfico para crear páginas HTML.
+          </p>
+          <h2>¿Qué están haciendo las etiquetas</h2>
+          <p>
+            Las etiquetas son las que separan el texto normal del código HTML. Puede que los conozcas como las palabras entre corechetes. Permiten todas las cosas interesantes, como imágenes, tablas y cosas, simplemente diciéndole a su navegador qué renderizar en la página. Diferentes etiquetas realizarán diferentes funciones. Las etiquetas en sí no aparecen cuando ve su página a través de un navegador, pero sus efectos sí.
+          </p>
+          <h2>Ejemplo de código html</h2>
+          <pre><code class="html">
+  &lt;html lang=&quot;es&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;title&gt;Título&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      Contenido
+    &lt;/body&gt;
+  &lt;/html&gt;
+          </code></pre>
+        </div>
+      </main>
+      <aside class="nav">
+        <a class="prev" href="#"><i class="fas fa-arrow-left"></i> Anterior</a>
+        <a class="next" href="#"
+          >Siguiente <i class="fas fa-arrow-right"></i
+        ></a>
+      </aside>
+    </article>
+    <script src="/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

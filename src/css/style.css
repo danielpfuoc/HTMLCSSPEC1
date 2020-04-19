@@ -1,0 +1,311 @@
+$white: #ffffff;
+$grey: #eeeeee;
+$black: #000000;
+
+@mixin shadow {
+  box-shadow: 0px 0.7rem 1rem rgba(0, 0, 0, 0.1);
+}
+@mixin shadowdark {
+  box-shadow: 0px 0.7rem 1rem rgba(0, 0, 0, 0.2);
+}
+@mixin border {
+  border-radius: 0.5rem;
+}
+
+@keyframes gotolink {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 0.25rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes gotolink-prev {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -0.25rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  font-size: 14px;
+}
+
+body {
+  padding-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+p,
+dfn {
+  line-height: 150%;
+  font-style: inherit;
+}
+
+ul {
+  padding-left: 1rem;
+  li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    &:before {
+      content: "—";
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+header {
+  background-color: $grey;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  .contained {
+    width: 100%;
+  }
+  h1 {
+    margin: 0 0 3rem 0;
+  }
+  a {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    opacity: 1;
+    transition: all 0.25s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.contained {
+  max-width: 80%;
+  margin: auto;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -3rem;
+  .element {
+    background-color: $white;
+    text-decoration: none;
+    width: 30%;
+    margin-bottom: 2em;
+    padding: 2rem 2rem 2rem 2rem;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    @include shadow;
+    @include border;
+    transition: all ease 0.25s;
+
+    &:hover {
+      top: 0.25rem;
+      @include shadowdark;
+    }
+
+    &:hover i {
+      position: relative;
+      animation: gotolink 1s infinite 0.25s;
+    }
+
+    img {
+      width: 60%;
+      margin: 2rem auto 2rem auto;
+      opacity: 0.5;
+      transition: all ease 0.25s;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+  }
+}
+
+.page-categories {
+  .categories {
+    .element {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      img {
+        height: 5rem;
+        width: auto;
+        margin: 0 3rem 0 0;
+      }
+    }
+  }
+}
+
+.page-content {
+  .info {
+    margin-top: -3rem;
+    position: relative;
+    .introduction,
+    .content,
+    .nav {
+      padding: 2rem 2rem 2rem 2rem;
+      margin-bottom: 2rem;
+      background-color: $white;
+      @include shadow;
+      @include border;
+    }
+
+    .content {
+      width: 65%;
+
+      pre {
+        margin: 0;
+        code {
+          border-radius: 0.5rem;
+        }
+      }
+    }
+
+    .introduction {
+      width: 30%;
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 5rem;
+        width: auto;
+        margin: 0 3rem 0 0;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 0;
+        font-weight: 600;
+        text-decoration: underline;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .show {
+        display: block;
+      }
+
+      dl {
+        dt {
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+        }
+        dd {
+          margin: 0;
+          margin-bottom: 0.75rem;
+          a {
+            text-decoration: none;
+            &:hover i {
+              position: relative;
+              animation: gotolink 1s infinite 0.25s;
+            }
+          }
+        }
+      }
+    }
+    .nav {
+      width: 30%;
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        text-decoration: none;
+      }
+      .next:hover i {
+        position: relative;
+        animation: gotolink 1s infinite 0.25s;
+      }
+      .prev:hover i {
+        position: relative;
+        animation: gotolink-prev 1s infinite 0.25s;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 900px) and (max-width: 1400px) {
+  .page-content {
+    .info {
+      .introduction,
+      .nav {
+        flex-direction: column;
+        width: 20rem;
+      }
+      .introduction {
+        img {
+          margin-bottom: 2em;
+          margin-right: 0;
+        }
+      }
+      .nav {
+        .prev {
+          margin-bottom: 2em;
+        }
+      }
+      .content {
+        width: calc(100% - 20rem - 5%);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px) {
+  .page-content {
+    .info {
+      .introduction,
+      .content,
+      .nav {
+        position: unset;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 736px) {
+  * {
+    font-size: 11px;
+  }
+
+  .categories {
+    .element {
+      width: 100%;
+    }
+  }
+}
