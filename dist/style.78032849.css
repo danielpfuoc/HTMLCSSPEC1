@@ -349,6 +349,9 @@ header a:hover {
 }
 
 @media all and (max-width: 736px) {
+  * {
+    font-size: 12px;
+  }
     .categories .element {
       width: 100%;
     }
