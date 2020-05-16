@@ -43,10 +43,6 @@ $black: #000000;
   font-size: 14px;
 }
 
-body {
-  padding-bottom: 2rem;
-}
-
 h1 {
   font-size: 2.5rem;
 }
@@ -75,14 +71,34 @@ ul {
 
 header {
   background-color: $grey;
-  height: 20rem;
+  min-height: 22rem;
   display: flex;
   align-items: center;
   .contained {
     width: 100%;
   }
+  .logo {
+    position: absolute;
+    top: 2rem;
+    img {
+      position: relative;
+      height: 4rem;
+      z-index: 1;
+      &:hover + .hover {
+        opacity: 1;
+      }
+    }
+    .hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 0;
+      transition: all 0.25s ease;
+    }
+  }
   h1 {
-    margin: 0 0 3rem 0;
+    margin: 0;
   }
   a {
     display: inline-block;
@@ -92,6 +108,9 @@ header {
     &:hover {
       opacity: 0.5;
     }
+  }
+  .nohover:hover {
+    opacity: 1;
   }
 }
 
@@ -174,6 +193,15 @@ header {
 
     .content {
       width: 65%;
+
+      img {
+        width: 70%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0;
+        @include border;
+      }
 
       pre {
         margin: 0;
@@ -275,6 +303,36 @@ header {
   }
 }
 
+footer {
+  display: inline-block;
+  width: 100%;
+  margin-top: 5rem;
+  background-color: $grey;
+  p {
+    display: inline-block;
+  }
+  .star {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    float: right;
+    margin-top: 1rem;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    background-color: $black;
+  }
+}
+
 @media all and (min-width: 900px) and (max-width: 1400px) {
   .page-content {
     .info {
@@ -311,6 +369,13 @@ header {
         width: 100%;
       }
     }
+    .info {
+      .content {
+        img {
+          width: 85%;
+        }
+      }
+    }
   }
 }
 
@@ -322,6 +387,16 @@ header {
   .categories {
     .element {
       width: 100%;
+    }
+  }
+
+  .page-content {
+    .info {
+      .content {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
