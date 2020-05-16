@@ -117,40 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"img/manifest.json":[function(require,module,exports) {
-module.exports = {
-  "name": "App",
-  "icons": [{
-    "src": "\/android-icon-36x36.png",
-    "sizes": "36x36",
-    "type": "image\/png",
-    "density": "0.75"
-  }, {
-    "src": "\/android-icon-48x48.png",
-    "sizes": "48x48",
-    "type": "image\/png",
-    "density": "1.0"
-  }, {
-    "src": "\/android-icon-72x72.png",
-    "sizes": "72x72",
-    "type": "image\/png",
-    "density": "1.5"
-  }, {
-    "src": "\/android-icon-96x96.png",
-    "sizes": "96x96",
-    "type": "image\/png",
-    "density": "2.0"
-  }, {
-    "src": "\/android-icon-144x144.png",
-    "sizes": "144x144",
-    "type": "image\/png",
-    "density": "3.0"
-  }, {
-    "src": "\/android-icon-192x192.png",
-    "sizes": "192x192",
-    "type": "image\/png",
-    "density": "4.0"
-  }]
+})({"js/custom.js":[function(require,module,exports) {
+var y = document.getElementById("expand");
+
+y.onclick = function () {
+  var x = document.getElementById("hidden");
+
+  if (x.classList.contains("hide")) {
+    x.classList.remove("hide");
+    x.classList.add("show");
+    y.textContent = "Menos información";
+  } else {
+    x.classList.remove("show");
+    x.classList.add("hide");
+    y.textContent = "Más información";
+  }
 };
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -356,5 +337,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","img/manifest.json"], null)
-//# sourceMappingURL=/img/manifest.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/custom.js"], null)
+//# sourceMappingURL=/custom.a62a38dd.js.map
